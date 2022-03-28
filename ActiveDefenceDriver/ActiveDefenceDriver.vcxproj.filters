@@ -20,6 +20,15 @@
     <Filter Include="Helper">
       <UniqueIdentifier>{7735c8c0-683c-4a51-b8c0-c6d84789da97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FackSSDT">
+      <UniqueIdentifier>{f21a3a51-9fee-45c0-9e8a-cb6b179a0b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BlackWhiteHashTable">
+      <UniqueIdentifier>{8cc1b0af-2d47-480d-929f-767cae66edd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FilterProcedure">
+      <UniqueIdentifier>{4e8e27ad-9cc6-4536-b4ef-f119cd316c3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -51,6 +60,27 @@
     <ClInclude Include="SystemHelper.h">
       <Filter>Helper</Filter>
     </ClInclude>
+    <ClInclude Include="MemoryHelper.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="HookHelper.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackWhiteHashTable.h">
+      <Filter>BlackWhiteHashTable</Filter>
+    </ClInclude>
+    <ClInclude Include="FackSSDT.h">
+      <Filter>FackSSDT</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterProcedure.h">
+      <Filter>FilterProcedure</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHelper.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalVarible.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Device.c">
@@ -66,6 +96,24 @@
       <Filter>Helper</Filter>
     </ClCompile>
     <ClCompile Include="SystemHelper.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="HookHelper.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryHelper.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="FackSSDT.cpp">
+      <Filter>FackSSDT</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackWhiteHashTable.cpp">
+      <Filter>BlackWhiteHashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterProcedure.cpp">
+      <Filter>FilterProcedure</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHelper.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
   </ItemGroup>

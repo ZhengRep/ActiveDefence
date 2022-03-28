@@ -1,0 +1,212 @@
+﻿  Building 'ActiveDefenceDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping ARM\Debug\ActiveDefenceDriver.inf
+  Stamping [Version] section with DriverVer=03/28/2022,14.15.4.396
+  BlackWhiteHashTable.cpp
+  正在编译...
+  Device.c
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18707,32): error C4013: “_DataSynchronizationBarrier”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C4013: “_MoveFromCoprocessor”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C2065: “CP15_TPIDRPRW”: 未声明的标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19106,18): error C4013: “MemoryBarrier”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(22605,5): error C4013: “DbgRaiseAssertionFailure”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31939,66): error C4013: “InterlockedExchangePointer”未定义；假设外部返回 int
+  Driver.c
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18707,32): error C4013: “_DataSynchronizationBarrier”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C4013: “_MoveFromCoprocessor”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C2065: “CP15_TPIDRPRW”: 未声明的标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19106,18): error C4013: “MemoryBarrier”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(22605,5): error C4013: “DbgRaiseAssertionFailure”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31939,66): error C4013: “InterlockedExchangePointer”未定义；假设外部返回 int
+  正在编译...
+  EventHelper.cpp
+  FackSSDT.cpp
+  FilterProcedure.cpp
+  HookHelper.cpp
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18707,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18718,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18732,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18746,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18760,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18775,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18790,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18804,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18818,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18832,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18847,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18862,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18877,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C2065: “CP15_TPIDRPRW”: 未声明的标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C3861: “_MoveFromCoprocessor”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19105,5): error C3861: “_ReadWriteBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19106,5): error C3861: “MemoryBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(22605,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(24864,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27238,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27241,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31407,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31594,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31939,40): error C3861: “InterlockedExchangePointer”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31988,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32046,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32112,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35971,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35996,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36025,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36053,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36075,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36093,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36118,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36141,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36159,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(18,20): error C2146: 语法错误: 缺少“;”(在标识符“__NtDeleteFile”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(19,20): error C2146: 语法错误: 缺少“;”(在标识符“__NtTerminateProcess”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(20,21): error C2146: 语法错误: 缺少“;”(在标识符“__FakeSsdt”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(21,21): error C2146: 语法错误: 缺少“;”(在标识符“__FakeSssdt”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(53,14): error C2378: “HOOK_OBJECT”: 重定义；符号不能由 typedef 重载
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(19): message : 参见“HOOK_OBJECT”的声明
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(53,30): error C2378: “PHOOK_OBJECT”: 重定义；符号不能由 typedef 重载
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.h(21): message : 参见“PHOOK_OBJECT”的声明
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.cpp(3,1): error C2146: 语法错误: 缺少“;”(在标识符“ULONG”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.cpp(4,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\HookHelper.cpp(4,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+  MemoryHelper.cpp
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18707,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18718,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18732,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18746,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18760,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18775,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18790,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18804,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18818,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18832,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18847,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18862,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18877,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C2065: “CP15_TPIDRPRW”: 未声明的标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C3861: “_MoveFromCoprocessor”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19105,5): error C3861: “_ReadWriteBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19106,5): error C3861: “MemoryBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(22605,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(24864,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27238,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27241,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31407,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31594,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31939,40): error C3861: “InterlockedExchangePointer”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31988,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32046,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32112,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35971,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35996,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36025,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36053,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36075,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36093,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36118,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36141,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36159,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\MemoryHelper.cpp(9,2): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+  正在编译...
+  Queue.c
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18707,32): error C4013: “_DataSynchronizationBarrier”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C4013: “_MoveFromCoprocessor”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C2065: “CP15_TPIDRPRW”: 未声明的标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19106,18): error C4013: “MemoryBarrier”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(22605,5): error C4013: “DbgRaiseAssertionFailure”未定义；假设外部返回 int
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31939,66): error C4013: “InterlockedExchangePointer”未定义；假设外部返回 int
+  正在编译...
+  StringHelper.cpp
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18707,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18718,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18732,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18746,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18760,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18775,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18790,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18804,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18818,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18832,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18847,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18862,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18877,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C2065: “CP15_TPIDRPRW”: 未声明的标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C3861: “_MoveFromCoprocessor”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19105,5): error C3861: “_ReadWriteBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19106,5): error C3861: “MemoryBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(22605,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(24864,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27238,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27241,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31407,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31594,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31939,40): error C3861: “InterlockedExchangePointer”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31988,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32046,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32112,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35971,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35996,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36025,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36053,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36075,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36093,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36118,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36141,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36159,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\StringHelper.cpp(12,46): warning C4267: “初始化”: 从“size_t”转换到“USHORT”，可能丢失数据
+  SystemHelper.cpp
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18707,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18718,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18732,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18746,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18760,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18775,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18790,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18804,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18818,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18832,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18847,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18862,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(18877,5): error C3861: “_DataSynchronizationBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C2065: “CP15_TPIDRPRW”: 未声明的标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19074,22): error C3861: “_MoveFromCoprocessor”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19105,5): error C3861: “_ReadWriteBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(19106,5): error C3861: “MemoryBarrier”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(22605,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(24864,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27238,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(27241,9): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31407,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31594,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31939,40): error C3861: “InterlockedExchangePointer”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(31988,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32046,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(32112,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35971,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(35996,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36025,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36053,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36075,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36093,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36118,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36141,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+D:\Windows Kits\10\Include\10.0.18362.0\km\wdm.h(36159,5): error C3861: “DbgRaiseAssertionFailure”: 找不到标识符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(124,17): error C2146: 语法错误: 缺少“;”(在标识符“ZwQuerySystemInformation”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(131,10): error C2086: “NTSTATUS WINAPI”: 重定义
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(124): message : 参见“WINAPI”的声明
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(131,17): error C2146: 语法错误: 缺少“;”(在标识符“ZwQueryInformationProcess”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(132,2): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(132,25): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(132,25): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(132,2): error C2065: “_In_      HANDLE”: 未声明的标识符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(132,25): error C2146: 语法错误: 缺少“)”(在标识符“          ProcessHandle”的前面)
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(133,2): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(134,2): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(134,23): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(134,23): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(135,2): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(135,24): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(135,24): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(136,2): error C3872: “0xa0”: 此字符不允许在标识符中使用
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(136,20): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+E:\Vstudio2019\ActiveDefence\ActiveDefenceDriver\SystemHelper.h(136,20): error C3872: “0xa0”: 此字符不允许在标识符中使用

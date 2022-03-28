@@ -38,15 +38,28 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BlackWhiteHashTable.cpp" />
     <ClCompile Include="Device.c" />
     <ClCompile Include="Driver.c" />
+    <ClCompile Include="EventHelper.cpp" />
+    <ClCompile Include="FackSSDT.cpp" />
+    <ClCompile Include="FilterProcedure.cpp" />
+    <ClCompile Include="HookHelper.cpp" />
+    <ClCompile Include="MemoryHelper.cpp" />
     <ClCompile Include="Queue.c" />
     <ClCompile Include="StringHelper.cpp" />
     <ClCompile Include="SystemHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlackWhiteHashTable.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="Driver.h" />
+    <ClInclude Include="EventHelper.h" />
+    <ClInclude Include="FackSSDT.h" />
+    <ClInclude Include="FilterProcedure.h" />
+    <ClInclude Include="GlobalVarible.h" />
+    <ClInclude Include="HookHelper.h" />
+    <ClInclude Include="MemoryHelper.h" />
     <ClInclude Include="Public.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="StringHelper.h" />

@@ -1,0 +1,89 @@
+;
+; ActiveDefenceDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=ActiveDefenceDriver.cat
+DriverVer = 03/28/2022,14.15.4.396
+
+[DestinationDirs]
+DefaultDestDir = 12
+ActiveDefenceDriver_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+ActiveDefenceDriver.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM
+
+[Standard.NTARM]
+%ActiveDefenceDriver.DeviceDesc%=ActiveDefenceDriver_Device, Root\ActiveDefenceDriver ; TODO: edit hw-id
+
+[ActiveDefenceDriver_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+ActiveDefenceDriver.sys
+
+;-------------- Service installation
+[ActiveDefenceDriver_Device.NT.Services]
+AddService = ActiveDefenceDriver,%SPSVCINST_ASSOCSERVICE%, ActiveDefenceDriver_Service_Inst
+
+; -------------- ActiveDefenceDriver driver install sections
+[ActiveDefenceDriver_Service_Inst]
+DisplayName    = %ActiveDefenceDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\ActiveDefenceDriver.sys
+
+;
+;--- ActiveDefenceDriver_Device Coinstaller installation ------
+;
+
+[ActiveDefenceDriver_Device.NT.CoInstallers]
+AddReg=ActiveDefenceDriver_Device_CoInstaller_AddReg
+CopyFiles=ActiveDefenceDriver_Device_CoInstaller_CopyFiles
+
+[ActiveDefenceDriver_Device_CoInstaller_AddReg]
+;
+
+
+[ActiveDefenceDriver_Device_CoInstaller_CopyFiles]
+;
+
+
+[ActiveDefenceDriver_Device.NT.Wdf]
+KmdfService =  ActiveDefenceDriver, ActiveDefenceDriver_wdfsect
+[ActiveDefenceDriver_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "ActiveDefenceDriver Installation Disk"
+ActiveDefenceDriver.DeviceDesc = "ActiveDefenceDriver Device"
+ActiveDefenceDriver.SVCDESC = "ActiveDefenceDriver Service"
