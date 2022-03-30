@@ -237,3 +237,29 @@ ULONG __stdcall Fake911(ULONG FunctionService, ULONG FunctionAddress, ULONG Serv
 
 	return FunctionAddress;
 }
+
+BOOLEAN InitializeSysCallTable()
+{
+
+}
+
+
+BOOLEAN IsMajorProtect(IN ULONG CrimeType)
+{
+	PAGED_CODE();
+	return ((CrimeType & CRIME_MAJOR_MASK & __MajorProtectedMask) != 0);
+}
+
+BOOLEAN IsAllHookObjectIsUsing()
+{
+	PAGED_CODE();
+	int i;
+	for (i = 0; i < HOOK_OBJECTS; i++)
+	{
+		if ((__FakeSsdt[i] == NULL ) && ((__FakeSsdt[i])->UseReference == 0) || (__FakeSssdt[i] == NULL) && ((__FakeSssdt[i])->UseReference == 0))
+		{
+			return FALSE;
+		}
+	}
+	return TRUE;
+}

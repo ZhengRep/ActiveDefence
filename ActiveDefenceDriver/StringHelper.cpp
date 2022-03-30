@@ -9,7 +9,7 @@ BOOLEAN IsUnistrEndWithWcs(IN PUNICODE_STRING UnicodeString, IN PWCHAR Wchar)
 	}
 
 	USHORT usUnstCharicterCount = UnicodeString->Length / sizeof(WCHAR);
-	USHORT usWcharCharicterCount = wcslen(Wchar);
+	USHORT usWcharCharicterCount = (USHORT)wcslen(Wchar);
 
 	if (usUnstCharicterCount < usWcharCharicterCount)
 	{

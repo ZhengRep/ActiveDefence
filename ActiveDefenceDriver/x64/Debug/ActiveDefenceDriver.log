@@ -1,0 +1,5 @@
+﻿  Building 'ActiveDefenceDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\ActiveDefenceDriver.inf
+  Stamping [Version] section with DriverVer=03/29/2022,19.5.43.107
+tracewpp : error wpp: Unable to open file 'trace.h', error code 2
+tracewpp : error wpp: Fatal error: CreateFile error

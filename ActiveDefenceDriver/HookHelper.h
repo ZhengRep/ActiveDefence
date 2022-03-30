@@ -72,9 +72,12 @@ typedef struct _HOOK_OBJECT {
 
 */
 //Function define
-ULONG FindHookPosition();
-BOOLEAN Hook(IN ULONG HookPosition, IN ULONG Tampoline);
-VOID DpcProcedure();
-BOOLEAN UnHook();
-VOID FiFastCallEntry();
+ULONG			FindHookPosition();
+BOOLEAN			Hook(IN ULONG HookPosition, IN ULONG Tampoline);
+VOID			DpcProcedure();
+BOOLEAN			UnHook();
+VOID			FiFastCallEntry();
 ULONG __stdcall Fake911(ULONG FunctionService, ULONG FunctionAddress, ULONG ServiceTableBase);
+BOOLEAN			InitializeSysCallTable();
+BOOLEAN			IsMajorProtect(IN ULONG CrimeType);
+BOOLEAN			IsAllHookObjectIsUsing();

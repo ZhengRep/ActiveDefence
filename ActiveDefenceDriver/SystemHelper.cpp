@@ -45,3 +45,24 @@ PMDL MakeAddressWritable(IN ULONG VirtuallAddress, IN ULONG AddressSize, OUT PVO
 	return pMdl;
 
 }
+
+PUNICODE_STRING GetProcessNameByEprocess(IN PEPROCESS Eprocess)
+{
+	PAGED_CODE();
+	NTSTATUS status;
+	HANDLE EprocessHandle;
+	status = ObOpenObjectByPointer(Eprocess, NULL, NULL, 0, 0, KernelMode, &EprocessHandle);
+	if (!NT_SUCCESS(status))
+	{
+		return NULL;
+	}
+
+	USHORT VirtualSize = 32;
+	PUCHAR VirtualAddress = (PUCHAR)ExAllocatePool(NonPagedPool, VirtualSize);
+	if (!VirtualAddress)
+	{
+		return NULL;
+	}
+	status = ZwQueryInformationProcess()
+
+}

@@ -112,3 +112,4 @@ typedef struct _SYSTEM_MODULE_INFORMATION
 
 //Function define
 PMDL MakeAddressWritable(IN ULONG VirtuallAddress, IN ULONG AddressSize, OUT PVOID ReflectAddress);
+PUNICODE_STRING GetProcessNameByEprocess(IN PEPROCESS Eprocess);

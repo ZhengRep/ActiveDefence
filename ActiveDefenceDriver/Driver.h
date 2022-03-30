@@ -1,35 +1,36 @@
-/*++
+#include<fltKernel.h>
+#include "GlobalVarible.h"
 
-Module Name:
+#define DEVICE_OBJECT_NAME      L"\\Device\\ActiveDefence"
+#define DEVICE_LINK_NAME        L"\\DosDevices\\ActiveDefence"
 
-    driver.h
+#define IOCTL_GET_EVENT_DATA						\
+	CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa01,	\
+	METHOD_BUFFERED, FILE_READ_DATA )
 
-Abstract:
 
-    This file contains the driver definitions.
+#define IOCTL_GIVE_JUDGMENT_DATA						\
+	CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa02,	\
+	METHOD_BUFFERED, FILE_READ_DATA )
 
-Environment:
+#define IOCTL_GET_MAJOR_INFORMATION					\
+	CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa03, 				\
+	METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
 
-    Kernel-mode Driver Framework
+#define IOCTL_SET_MAJOR_INFORMATION					\
+	CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa04, 				\
+	METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
 
---*/
+typedef struct _MAJOR_INFORMATION_ {
+	ULONG			CrimeType;
+	ULONG			IsProtected;
+}MAJOR_INFORMATION, * PMAJOR_INFORMATION, * PPMAJOR_INFORMATION;
 
-#include <ntddk.h>
-#include <wdf.h>
-#include <initguid.h>
 
-#include "device.h"
-#include "queue.h"
-#include "trace.h"
-
-EXTERN_C_START
-
-//
-// WDFDRIVER Events
-//
-
-DRIVER_INITIALIZE DriverEntry;
-EVT_WDF_DRIVER_DEVICE_ADD ActiveDefenceDriverEvtDeviceAdd;
-EVT_WDF_OBJECT_CONTEXT_CLEANUP ActiveDefenceDriverEvtDriverContextCleanup;
-
-EXTERN_C_END
+NTSTATUS		DriverEntry(IN PDRIVER_OBJECT DriObj, IN UNICODE_STRING RegPath);
+VOID			DriverUnload(IN PDRIVER_OBJECT DriObj);
+NTSTATUS		IoPassThroughDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp);
+NTSTATUS		IoCreateDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp);
+NTSTATUS		IoDeleteDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp);
+NTSTATUS		IoDeviceControlDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp);
+BOOLEAN			DriverEntryInit();
