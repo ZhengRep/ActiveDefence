@@ -8,7 +8,7 @@ Class=Sample ; TODO: edit Class
 ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
 Provider=%ManufacturerName%
 CatalogFile=ActiveDefenceDriver.cat
-DriverVer = 03/29/2022,19.5.43.107
+DriverVer = 04/02/2022,22.40.12.704
 
 [DestinationDirs]
 DefaultDestDir = 12

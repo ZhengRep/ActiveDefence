@@ -6,6 +6,12 @@
 #define HOOK_OBJECTS		1024
 #define ALLOCATE_TAG		'spiH'
 
+#define MEMOERY_USER_MODE		0x4
+#define MEMOERY_KERNEL_MODE		0x8
+
+extern NPAGED_LOOKASIDE_LIST __EventDataNpagedLookasideList;
+LIST_ENTRY					__EventDataListHead;
+
 extern HOOK_OBJECT			__NtDeleteFile;
 extern HOOK_OBJECT			__NtTerminateProcess;
 

@@ -7,7 +7,6 @@ extern NPAGED_LOOKASIDE_LIST __EventDataNpagedLookasideList;
 
 KSPIN_LOCK		__SpinLockEventData;
 KSEMAPHORE		__SemaphoreEventData;
-LIST_ENTRY		__EventDataListHead;
 ULONG			__EventDataCount;
 
 BOOLEAN InitializeEventHandler()
@@ -187,7 +186,7 @@ VOID CancelAllEventData()
 	PAGED_CODE();
 	InterlockedExchange((volatile long*)&__EventDataCount, 50 + 1);
 
-	while (KeReleaseSemaphore(&__SemaphoreEventData))
+	while (KeReleaseSemaphore(&__SemaphoreEventData, 0, 1, NULL))
 	{
 		KeWaitForSingleObject(&__SemaphoreEventData, Executive, KernelMode, FALSE, NULL);
 		PLIST_ENTRY TempListEntry = ExInterlockedRemoveHeadList(&__EventDataListHead, &__SpinLockEventData);
@@ -198,4 +197,17 @@ VOID CancelAllEventData()
 
 	InterlockedExchange((volatile long*)&__EventDataCount, 0);
 
+}
+PEVENT_DATA PopEventData(IN PLARGE_INTEGER TimeOut)
+{
+	PAGED_CODE();
+	NTSTATUS status = KeWaitForSingleObject(&__SemaphoreEventData, Executive, KernelMode, FALSE, TimeOut);
+	if (status == STATUS_TIMEOUT || !NT_SUCCESS(status))
+	{
+		return NULL;
+	}
+	PLIST_ENTRY ListEntryData = ExInterlockedRemoveHeadList(&__EventDataListHead, &__SpinLockEventData);
+	PEVENT_DATA EventData = CONTAINING_RECORD(ListEntryData, EVENT_DATA, ListEntry);
+	InterlockedDecrement((volatile long*)__EventDataCount);
+	return EventDAta;
 }

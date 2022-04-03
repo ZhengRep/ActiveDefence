@@ -1,5 +1,7 @@
 #include "HookHelper.h"
 #include "GlobalVarible.h"
+#include "FilterProcedure.h"
+#include "FackSSDT.h"
 #include "SystemHelper.h"
 //Global variable
 volatile long __NumberOfRaisedCpu;
@@ -177,7 +179,7 @@ BOOLEAN UnHook()
 	return IsOk;
 }
 
-VOID __declspec(naked) FiFastCallEntry()
+VOID __declspec(naked) FakeKiFastCallEntry()
 {
 	_asm
 	{
@@ -240,7 +242,39 @@ ULONG __stdcall Fake911(ULONG FunctionService, ULONG FunctionAddress, ULONG Serv
 
 BOOLEAN InitializeSysCallTable()
 {
+	PAGED_CODE();
+	__NtDeleteFile.FakeFunctionAddress = (ULONG)FakeNtDeleteFile;
+	__NtDeleteFile.PreviousFilterProcedure = (ULONG)PreviousNtDeleteFile;
+	__NtDeleteFile.PostFilterProcedure = (ULONG)PostNtProceduer;
+	__NtDeleteFile.UseReference = 0;
+	__NtDeleteFile.FunctionService = SSDT_SERVICE(ZwDeleteFile);
+	__NtDeleteFile.FilterType = FILTER_TYPE_PREVIOUS | FILTER_TYPE_USER;
+	__NtDeleteFile.CrimeType = CRIME_MINOR_NTDELETEFILE;
 
+	if (__NtDeleteFile.FunctionService >= HOOK_OBJECTS)
+	{
+		return FALSE;
+	}
+
+	InterlockedExchange((volatile long*)&__FakeSsdt[__NtDeleteFile.FunctionService],(ULONG)&__NtDeleteFile);
+
+	// NtTerminateProcess
+	__NtTerminateProcess.FakeFunctionAddress = (ULONG)FakeNtTerminateProcess;
+	__NtTerminateProcess.PreviousFilterProcedure = (ULONG)PreviousNtTerminateProcess;
+	__NtTerminateProcess.PostFilterProcedure = (ULONG)PostNtProceduer;
+	__NtTerminateProcess.UseReference = 0;
+	__NtTerminateProcess.FilterType = FILTER_TYPE_PREVIOUS | FILTER_TYPE_USER;
+	__NtTerminateProcess.CrimeType = CRIME_MINOR_NTTERMINATEPROCESS;
+
+	__NtTerminateProcess.FunctionService = SSDT_SERVICE(ZwTerminateProcess);
+	if (__NtTerminateProcess.FunctionService >= HOOK_OBJECTS)
+	{
+		return FALSE;
+	}
+
+	InterlockedExchange((volatile long*)&__FakeSsdt[__NtTerminateProcess.FunctionService], (ULONG)&__NtTerminateProcess);
+
+	return TRUE;
 }
 
 

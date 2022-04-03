@@ -1,6 +1,8 @@
 #pragma once
 #include<fltKernel.h>
 
+#define SSDT_SERVICE(FunctionAddress) *(PULONG)((PUCHAR)FunctionAddress+1)
+
 //Filter Type
 #define FILTER_TYPE_NONE		0x0
 #define FILTER_TYPE_PREVIOUS	0x1
@@ -76,7 +78,7 @@ ULONG			FindHookPosition();
 BOOLEAN			Hook(IN ULONG HookPosition, IN ULONG Tampoline);
 VOID			DpcProcedure();
 BOOLEAN			UnHook();
-VOID			FiFastCallEntry();
+VOID			FakeKiFastCallEntry();
 ULONG __stdcall Fake911(ULONG FunctionService, ULONG FunctionAddress, ULONG ServiceTableBase);
 BOOLEAN			InitializeSysCallTable();
 BOOLEAN			IsMajorProtect(IN ULONG CrimeType);

@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include<fltKernel.h>
+#include <ntddk.h>
 
 //OS version
 #define OS_VERSION_ERROR		0
@@ -111,5 +112,29 @@ typedef struct _SYSTEM_MODULE_INFORMATION
 } SYSTEM_MODULE_INFORMATION, * PSYSTEM_MODULE_INFORMATION;
 
 //Function define
+NTSTATUS
+NTAPI
+ZwQuerySystemInformation(
+	IN SYSTEM_INFORMATION_CLASS			SystemInformationClass,
+	OUT PVOID							SystemInformation,
+	IN ULONG							SystemInformationLength,
+	OUT	PULONG							ReturnLength
+);
+
+NTSTATUS
+NTAPI
+ZwQueryInformationProcess(
+	IN	HANDLE							ProcessHandle,
+	IN	PROCESSINFOCLASS				ProcessInformationClass,
+	OUT PVOID							ProcessInformation,
+	IN	ULONG							ProcessInformationLength,
+	OUT	PULONG							ReturnLength
+);
+
 PMDL MakeAddressWritable(IN ULONG VirtuallAddress, IN ULONG AddressSize, OUT PVOID ReflectAddress);
 PUNICODE_STRING GetProcessNameByEprocess(IN PEPROCESS Eprocess);
+BOOLEAN InitCommonVariables();
+PSYSTEM_MODULE_INFORMATION GetSystemModule();
+ULONG GetKiSystemAddress();
+BOOLEAN GetSystemModuleByName(IN char* ModuleName, OUT PSYSTEM_MODULE_ENTRY SystemModuleEntry);
+BOOLEAN GetShadowSsdtInfo(IN PULONG ServiceTableBase, IN ULONG ServiceNumber);

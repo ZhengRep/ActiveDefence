@@ -4,7 +4,6 @@
 #define MAX_PATH				256
 
 
-extern NPAGED_LOOKASIDE_LIST __EventDataNpagedLookasideList;
 
 typedef struct _JUDGMENT_DATA {
 	ULONG				EventData;
@@ -57,3 +56,4 @@ VOID BuildUserEventData(IN PEVENT_DATA EventData, OUT PUSER_EVENT_DATA UserEvevt
 VOID PushEventData(IN PEVENT_DATA EventData);
 VOID DestroyEventData(IN PEVENT_DATA EventData);
 VOID CancelAllEventData();
+PEVENT_DATA PopEventData(IN PLARGE_INTEGER TimeOut);
