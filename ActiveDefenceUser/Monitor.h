@@ -1,0 +1,46 @@
+#pragma once
+#include<windows.h>
+#include<tchar.h>
+#include<winioctl.h>
+
+#define DRIVER_LINK_NAME		"\\\\.\\ActiveDefence"
+
+#define JUDGMENT_REFUSE			1
+#define JUDGMENT_ACCEPT			2
+#define JUDGMENT_ALWAYS			4
+
+//Event type
+#define CRIME_MAJOR_MASK		0xF0000000
+#define CRIME_MAJOR_PROCESS		0x40000000
+#define CRIME_MAJOR_FILE		0x10000000
+#define CRIME_MAJOR_REGISTRY	0x20000000
+#define CRIME_MAJOR_SYS			0x80000000
+#define CRIME_MAJOR_ALL			(CRIME_MAJOR_PROCESS | CRIME_MAJOR_FILE | CRIME_MAJOR_REGISTRY | CRIME_MAJOR_SYS)
+
+//ControlCode
+#define IOCTL_GET_EVENT_DATA			CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa01, METHOD_BUFFERED, FILE_READ_DATA )
+#define IOCTL_GIVE_JUDGMENT_DATA		CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa02, METHOD_BUFFERED, FILE_READ_DATA )
+#define IOCTL_GET_MAJOR_INFORMATION		CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa03, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
+#define IOCTL_SET_MAJOR_INFORMATION		CTL_CODE(FILE_DEVICE_UNKNOWN, 0xa04, METHOD_BUFFERED, FILE_READ_DATA | FILE_WRITE_DATA)
+
+typedef struct _JUDGMENT_DATA {
+	ULONG				EventData;
+	ULONG				Judgment;
+} JUDGMENT_DATA, * PJUDGMENT_DATA, ** PPJUDGMENT_DATA;
+
+typedef struct _USER_EVENT_DATA {
+	ULONG				EventData;
+	ULONG				CrimeType;
+	ULONG				ExtraData;
+	WCHAR				Criminal[262];
+	WCHAR				Victim[262];
+} USER_EVENT_DATA, * PUSER_EVENT_DATA, ** PPUSER_EVENT_DATA;
+
+unsigned WINAPI ThreadProcedure(LPVOID ParameterData);
+INT_PTR WINAPI DialogProcedureMain(HWND Hwnd, UINT Message, WPARAM ParameterData1, LPARAM ParameterData2);
+INT_PTR WINAPI DialogProcedureMonitor(HWND Hwnd, UINT Message, WPARAM ParameterData1, LPARAM ParameterData2);
+BOOL IsMonitorOn(ULONG CrimeType);
+BOOL SetMonitor(ULONG CrimeType, BOOL IsOn);
+DWORD WINAPI SetMonitorInternal(PMAJOR_INFORMATION MajorInfo);
+VOID DeviceNameToDosName(wchar_t* ImageName);
+

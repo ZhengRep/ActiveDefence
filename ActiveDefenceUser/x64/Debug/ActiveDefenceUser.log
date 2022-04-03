@@ -1,5 +1,2 @@
-﻿  pch.cpp
-  ActiveDefenceUser.cpp
-  ActiveDefenceUserDlg.cpp
-  正在生成代码...
-C:\Program Files (x86)\Microsoft Visual Studio\2019\2017\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(1010,5): error MSB6006: “link.exe”已退出，代码为 1。
+﻿  Monitor.cpp
+  ActiveDefenceUser.vcxproj -> E:\Vstudio2019\ActiveDefence\x64\Debug\ActiveDefenceUser.exe
