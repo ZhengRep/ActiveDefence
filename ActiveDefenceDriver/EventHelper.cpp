@@ -209,5 +209,5 @@ PEVENT_DATA PopEventData(IN PLARGE_INTEGER TimeOut)
 	PLIST_ENTRY ListEntryData = ExInterlockedRemoveHeadList(&__EventDataListHead, &__SpinLockEventData);
 	PEVENT_DATA EventData = CONTAINING_RECORD(ListEntryData, EVENT_DATA, ListEntry);
 	InterlockedDecrement((volatile long*)__EventDataCount);
-	return EventDAta;
+	return EventData;
 }

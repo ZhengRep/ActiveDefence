@@ -14,7 +14,7 @@ BOOLEAN InitCommonVariables()
 	__MmUserProbeAddress = (ULONG)MmGetSystemRoutineAddress(&TempString);
 	//get service
 	RtlInitUnicodeString(&TempString, L"KeServiceDiscriptorTable");
-	__KeServiceDescriptorTable = (ULONG)MmGetSystemRoutineAddress(&TempString);
+	__KeServiceDescriptorTable = (ULONG)MmGetSystemRoutineAddress(&TempString); //获取SSDT的基址
 	if (__KeServiceDescriptorTable && MmIsAddressValid((PVOID)__KeServiceDescriptorTable))
 	{
 		__ServiceTableBase = *(PULONG)__KeServiceDescriptorTable;
@@ -25,7 +25,7 @@ BOOLEAN InitCommonVariables()
 	__JmpBackPosition = (__HookPosition)+5;
 	//SystemService
 	__KiSystemService = GetKiSystemAddress();
-	//ShowdowSsdt
+	//ShadowSsdt
 	GetShadowSsdtInfo(&__ShadowServiceTableBase, &__ShadowNumberOfServices);
 
 	//Check
@@ -48,14 +48,14 @@ BOOLEAN GetShadowSsdtInfo(IN PULONG ServiceTableBase, IN PULONG ServiceNumber)
 	BOOLEAN IsOk = FALSE;
 	UNICODE_STRING TempString = RTL_CONSTANT_STRING(L"KeAddSystemServiceTable");
 	ULONG KeAddSystemServiceTable = (ULONG)MmGetSystemRoutineAddress(&TempString);
-	if (!KeAddSystemServiceTable || !MmIsAddressValid((PVOID)KeAddSystemServiceTable))
+	if (!KeAddSystemServiceTable || !MmIsAddressValid((PVOID)KeAddSystemServiceTable)) //KeAddSystemServiceTable ---> SSDTShadow
 	{
 		return FALSE;
 	}
 	ULONG TableLimitAddress = KeAddSystemServiceTable + 256;
 	while (KeAddSystemServiceTable < TableLimitAddress)
 	{
-		if (MmIsAddressValid((PVOID)KeAddSystemServiceTable) && *(USHORT*)KeAddSystemServiceTable == 0x888d)
+		if (MmIsAddressValid((PVOID)KeAddSystemServiceTable) && *(USHORT*)KeAddSystemServiceTable == 0x888d) //搜索特征码0x888d 来寻找
 		{
 			ULONG KeServiceDiscriptorShadowTable = *(PULONG)(KeAddSystemServiceTable + 2);
 			*ServiceTableBase = *(PULONG)KeServiceDiscriptorShadowTable + 16;
@@ -66,6 +66,7 @@ BOOLEAN GetShadowSsdtInfo(IN PULONG ServiceTableBase, IN PULONG ServiceNumber)
 	return IsOk;
 }
 
+//枚举系统模块
 BOOLEAN GetSystemModuleByName(IN char* ModuleName, OUT PSYSTEM_MODULE_ENTRY SystemModuleEntry)
 {
 	PAGED_CODE();
@@ -116,7 +117,7 @@ PSYSTEM_MODULE_INFORMATION GetSystemModule()
 		{
 			return NULL;
 		}
-		status = ZwQuerySystemInformation(SystemModuleInformation, smi, VirtualSize, &VirtualSize);
+		status = ZwQuerySystemInformation(SystemModuleInformation, smi, VirtualSize, &VirtualSize); //获取ntoskrnl模块的信息
 		if (status != STATUS_INFO_LENGTH_MISMATCH)
 		{
 			break;

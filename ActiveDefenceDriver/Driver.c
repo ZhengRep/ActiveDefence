@@ -99,7 +99,7 @@ NTSTATUS IoCreateDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp)
 			PUNICODE_STRING ImageName = GetProcessNameByEprocess(EProcess);
 			if (ImageName)
 			{
-				AddNodeToBlackWhiteHashTable(ImageName, CRIME_MAJOR_ALL, NODE_TYPE_WHITE);
+				AddNodeToBlackWhiteHashTable(ImageName, CRIME_MAJOR_ALL, NODE_TYPE_WHITE); //将自己的进程加入白名单
 				ExFreePool(ImageName);
 				CancelAllEventData();
 				__OwnProcess = EProcess;
@@ -139,7 +139,7 @@ NTSTATUS IoDeviceControlDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp)
 	irp->IoStatus.Status = STATUS_UNSUCCESSFUL;
 	switch (IoControlCode)
 	{
-	case IOCTL_GET_EVENT_DATA:
+	case IOCTL_GET_EVENT_DATA: //应用层获取事件数据 接受操作
 	{
 		if (InputBufferLength == sizeof(USER_EVENT_DATA))
 		{
@@ -152,7 +152,7 @@ NTSTATUS IoDeviceControlDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp)
 		}
 		break;
 	}
-	case IOCTL_GET_MAJOR_INFORMATION:
+	case IOCTL_GET_MAJOR_INFORMATION:  //查看监控信息
 	{
 		if (InputBufferLength == sizeof(MAJOR_INFORMATION) && OutputBufferLength == sizeof(MAJOR_INFORMATION))
 		{
@@ -171,7 +171,7 @@ NTSTATUS IoDeviceControlDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp)
 		}
 		break;
 	}
-	case IOCTL_GIVE_JUDGMENT_DATA:
+	case IOCTL_GIVE_JUDGMENT_DATA: //设置监控信息
 	{
 		if (InputBufferLength == sizeof(JUDGMENT_DATA)) {
 			PJUDGMENT_DATA JudgmentData = irp->AssociatedIrp.SystemBuffer;
@@ -190,7 +190,7 @@ NTSTATUS IoDeviceControlDispatch(IN PDEVICE_OBJECT DevObj, IN PIRP irp)
 		}
 		break;
 	}
-	case IOCTL_SET_MAJOR_INFORMATION:
+	case IOCTL_SET_MAJOR_INFORMATION: //拒绝操作状态
 	{
 		if (InputBufferLength == sizeof(MAJOR_INFORMATION))
 		{

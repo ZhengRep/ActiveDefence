@@ -53,7 +53,7 @@ BOOLEAN AddNodeToBlackWhiteHashTable(PUNICODE_STRING NodeName, ULONG CrimeType, 
 	KeAcquireSpinLock(&__SpinLockOfBlackWhiteHashTable, &irql);
 	pNode->Flink = __BlackWhiteHashTable[Hash];
 	__BlackWhiteHashTable[Hash] = pNode;
-	KeReleaseSpinLock(&__SpinLockOfBlackWhiteHashTable, &irql);
+	KeReleaseSpinLock(&__SpinLockOfBlackWhiteHashTable, irql);
 
 	return IsOk;
 }
@@ -88,7 +88,7 @@ BOOLEAN IsInBlackWhiteHashTable(PUNICODE_STRING NodeName, ULONG CrimeType, UCHAR
 		}
 	}
 
-	KeReleaseSpinLock(&__SpinLockOfBlackWhiteHashTable, &irql);
+	KeReleaseSpinLock(&__SpinLockOfBlackWhiteHashTable, irql);
 	return IsFound;
 }
 
@@ -112,5 +112,5 @@ VOID EraseBlackWhiteHashTable()
 		}
 	}
 
-	KeReleaseSpinLock(&__SpinLockOfBlackWhiteHashTable, &irql);
+	KeReleaseSpinLock(&__SpinLockOfBlackWhiteHashTable, irql);
 }
